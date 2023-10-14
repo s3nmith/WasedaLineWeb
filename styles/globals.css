@@ -16,6 +16,14 @@
   }
 }
 
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -28,7 +36,16 @@ body {
 
 .camp-tiles {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.tile-layout {
   justify-content: center;
-  gap: 1rem;
   flex-wrap: wrap;
+}
+
+.tile:hover {
+  border-color: aliceblue;
 }

@@ -1,13 +1,18 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+// api/test.ts
+import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-  name: string
-}
+  receivedData: string | null;
+};
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  if (req.method === "POST") {
+    const receivedData = req.body.data || null;
+    res.status(200).json({ receivedData });
+  } else {
+    res.status(405).json({ receivedData: "Method not allowed" });
+  }
 }

@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -38,7 +32,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
 }
 
 .tile-layout {
@@ -48,4 +42,14 @@ body {
 
 .tile:hover {
   border-color: aliceblue;
+}
+.tile {
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.image {
+  border-radius: 15px;
 }

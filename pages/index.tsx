@@ -26,10 +26,11 @@ export default function Home() {
     >
       <div className="header">
         <Image
+          className="image"
           src="/wasedaLine1.png"
           alt="WasedaLine Logo"
-          width={200}
-          height={200}
+          width={175}
+          height={175}
         />
         <h1 className="title"></h1>
       </div>

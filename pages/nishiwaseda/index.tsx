@@ -29,8 +29,8 @@ export default function NishiWaseda() {
           <div key={index} className="p-4 border rounded shadow-lg">
             <h2 className="text-xl font-semibold">{cafeteria.name}</h2>
             <p className="mt-2">
-              Current Queue:{" "}
-              <span className="font-bold">{cafeteria.queue}</span> people
+              Current Waiting Time:{" "}
+              <span className="font-bold">{cafeteria.queue}</span> minutes
             </p>
           </div>
         ))}

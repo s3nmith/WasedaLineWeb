@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import styles from "./NishiWaseda.module.css";
 
 // replace this with actual data from an API
 const mockData = [
@@ -7,8 +8,13 @@ const mockData = [
   { name: "Building 51", queue: 5 },
 ];
 
+type Cafeteria = {
+  name: string;
+  queue: number;
+};
+
 export default function NishiWaseda() {
-  const [cafeterias, setCafeterias] = useState([]);
+  const [cafeterias, setCafeterias] = useState<Cafeteria[]>([]);
 
   useEffect(() => {
     // Fetch data from an API or use mock data
@@ -16,21 +22,21 @@ export default function NishiWaseda() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">NishiWaseda</h1>
-      <div className="back-butt">
+    <div className={styles.container}>
+      <h1 className={styles.title}>Nishiwaseda/西早稲田キャンパス</h1>
+      <div className={styles.backButt}>
         <Link href="/">
           <h2>back</h2>
         </Link>
       </div>
 
-      <div className="grid gap-4">
+      <div className={styles.grid}>
         {cafeterias.map((cafeteria, index) => (
-          <div key={index} className="p-4 border rounded shadow-lg">
-            <h2 className="text-xl font-semibold">{cafeteria.name}</h2>
-            <p className="mt-2">
+          <div key={index} className={styles.cafeteriaCard}>
+            <h2 className={styles.cafeteriaName}>{cafeteria.name}</h2>
+            <p>
               Current Waiting Time:{" "}
-              <span className="font-bold">{cafeteria.queue}</span> minutes
+              <span className={styles.fontBold}>{cafeteria.queue}</span> minutes
             </p>
           </div>
         ))}

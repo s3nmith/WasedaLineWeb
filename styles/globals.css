@@ -28,7 +28,8 @@ body::before {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url("/waselogo.png");
+  /* if u want waseda backg */
+  /* background-image: url("/waselogo.png"); */
   background-size: 350px 350px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -50,8 +51,9 @@ body::before {
 }
 
 .tile:hover {
-  border-color: #444340;
+  border-color: #fef9ed;
   color: #fef9ed;
+  background-color: #881c28;
 }
 .tile {
   border: 1px solid gray;

@@ -22,10 +22,8 @@
   align-items: center;
   width: 100%;
   padding-top: 30px;
-}
-.mapIm > img {
-  max-width: 30%;
-  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .backButt {
   justify-content: center;
@@ -38,8 +36,10 @@
   padding: 5px 10px;
 }
 
-.backButt h2 {
-  color: #000000;
+.backButt:hover {
+  border-color: #fef9ed;
+  color: #fef9ed;
+  background-color: #881c28;
 }
 
 .grid {

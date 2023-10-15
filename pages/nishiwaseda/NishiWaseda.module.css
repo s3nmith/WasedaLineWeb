@@ -22,24 +22,24 @@
   align-items: center;
   width: 100%;
   padding-top: 30px;
+  max-width: 600px;
+  margin: 0 auto;
 }
-.mapIm > img {
-  max-width: 30%;
-  width: 100%;
-}
+
 .backButt {
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #000000;
   border-radius: 5px;
-  display: inline-block;
   margin-bottom: 20px;
   padding: 5px 10px;
 }
 
-.backButt h2 {
-  color: #000000;
+.backButt:hover {
+  border-color: #fef9ed;
+  color: #fef9ed;
+  background-color: #881c28;
 }
 
 .grid {

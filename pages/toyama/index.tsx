@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./NishiWaseda.module.css";
 
 // replace this with actual data from an API
-const mockData = [{ name: "Okuma Garden Cafeteria", queue: 20 }];
+const mockData = [{ name: "Toyama Cafeteria", queue: 20 }];
 
 type Cafeteria = {
   name: string;
@@ -20,7 +20,7 @@ export default function NishiWaseda() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Waseda Campus/早稲田キャンパス</h1>
+      <h1 className={styles.title}>Toyama Campus/戸山キャンパス</h1>
       <div className={styles.backButt}>
         <Link href="/">
           <h2>back</h2>

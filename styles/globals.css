@@ -4,9 +4,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: #fef9ed;
+    --background-start-rgb: 145, 28, 34;
+    --background-end-rgb: 145, 28, 34;
   }
 }
 
@@ -18,14 +18,20 @@
   gap: 1rem;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("/waselogo.png");
+  background-size: 350px 350px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 1;
 }
 
 .camp-tiles {
@@ -41,7 +47,7 @@ body {
 }
 
 .tile:hover {
-  border-color: aliceblue;
+  border-color: #fef9ed;
 }
 .tile {
   border: 1px solid gray;

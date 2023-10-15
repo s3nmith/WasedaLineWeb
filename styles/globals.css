@@ -15,10 +15,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 5rem;
 }
+
 body {
-  background-color: #fef9ef;
+  background-color: #fef9ed;
 }
 body::before {
   content: "";

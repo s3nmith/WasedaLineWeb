@@ -26,7 +26,7 @@ export default function NishiWaseda() {
       <h1 className={styles.title}>Nishiwaseda/西早稲田キャンパス</h1>
       <div className={styles.backButt}>
         <Link href="/">
-          <h2>back</h2>
+          <h2 className={styles.backText}>back</h2>
         </Link>
       </div>
 

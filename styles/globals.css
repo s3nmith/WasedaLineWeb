@@ -17,7 +17,9 @@
   align-items: center;
   gap: 1rem;
 }
-
+body {
+  background-color: #fef9ef;
+}
 body::before {
   content: "";
   position: absolute;

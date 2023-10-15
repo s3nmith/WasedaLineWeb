@@ -50,7 +50,8 @@ body::before {
 }
 
 .tile:hover {
-  border-color: #fef9ed;
+  border-color: #444340;
+  color: #fef9ed;
 }
 .tile {
   border: 1px solid gray;

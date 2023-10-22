@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./NishiWaseda.module.css";
 import Image from "next/image";
-import { mock } from "node:test";
 
-// replace this with actual data from an API
 const mockData = [{ name: "Building 56", queue: 5 }];
 
 type Cafeteria = {
@@ -15,7 +13,7 @@ type Cafeteria = {
 export default function NishiWaseda() {
   const [cafeterias, setCafeterias] = useState<Cafeteria[]>([]);
 
-  useEffect(() => {
+  const fetchData = () => {
     fetch("/api/test")
       .then((response) => response.json())
       .then((data) => {
@@ -35,6 +33,13 @@ export default function NishiWaseda() {
         console.error("Error fetching data: ", error);
         setCafeterias(mockData); // mock data used if error
       });
+  };
+
+  useEffect(() => {
+    fetchData(); // Fetch data immediately
+    const intervalId = setInterval(fetchData, 120000); // Fetch data every 2 minutes
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (

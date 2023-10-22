@@ -4,7 +4,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: #fef9ed;
+    --foreground-rgb: #fffaee;
     --background-start-rgb: 145, 28, 34;
     --background-end-rgb: 145, 28, 34;
   }
@@ -19,7 +19,7 @@
 }
 
 body {
-  background-color: #fef9ed;
+  background-color: #fff9ed;
 }
 body::before {
   content: "";

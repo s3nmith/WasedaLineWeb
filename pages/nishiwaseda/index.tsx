@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./NishiWaseda.module.css";
 import Image from "next/image";
+import { mock } from "node:test";
 
 // replace this with actual data from an API
-const mockData = [
-  { name: "Building 63", queue: 20 },
-  { name: "Building 51", queue: 5 },
-];
+const mockData = [{ name: "Building 56", queue: 5 }];
 
 type Cafeteria = {
   name: string;
@@ -18,8 +16,25 @@ export default function NishiWaseda() {
   const [cafeterias, setCafeterias] = useState<Cafeteria[]>([]);
 
   useEffect(() => {
-    // Fetch data from an API or use mock data
-    setCafeterias(mockData);
+    fetch("/api/test")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && data.receivedData) {
+          let updatedData = [...mockData];
+          updatedData[0] = {
+            name: "Button Press Count",
+            queue: parseInt(data.receivedData),
+          };
+          setCafeterias(updatedData);
+        } else {
+          console.error("Error: receivedData is null");
+          setCafeterias(mockData);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        setCafeterias(mockData); // mock data used if error
+      });
   }, []);
 
   return (

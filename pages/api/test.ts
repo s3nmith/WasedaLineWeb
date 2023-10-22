@@ -1,16 +1,18 @@
-// api/test.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
   receivedData: string | null;
 };
 
-let storedData: string | null = null; // In-memory storage for the data
+let storedData: string | null = null;
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  console.log("Received request. Method:", req.method);
+  console.log("Request body:", req.body);
+
   if (req.method === "POST") {
     storedData = req.body.data || null;
     res.status(200).json({ receivedData: storedData });

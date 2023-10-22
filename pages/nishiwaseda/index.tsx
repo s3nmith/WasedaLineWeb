@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./NishiWaseda.module.css";
 import Image from "next/image";
 
-const mockData = [{ name: "Building 56", queue: 5 }];
+// const mockData = [{ name: "Building 56", queue: 5 }];
 
 type Cafeteria = {
   name: string;
@@ -11,33 +11,26 @@ type Cafeteria = {
 };
 
 export default function NishiWaseda() {
-  const [cafeterias, setCafeterias] = useState<Cafeteria[]>([]);
+  const [buttonPressCount, setButtonPressCount] = useState<number | null>(null);
 
   const fetchData = () => {
     fetch("/api/test")
       .then((response) => response.json())
       .then((data) => {
         if (data && data.receivedData) {
-          let updatedData = [...mockData];
-          updatedData[0] = {
-            name: "Button Press Count",
-            queue: parseInt(data.receivedData),
-          };
-          setCafeterias(updatedData);
+          setButtonPressCount(parseInt(data.receivedData));
         } else {
           console.error("Error: receivedData is null");
-          setCafeterias(mockData);
         }
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
-        setCafeterias(mockData); // mock data used if error
       });
   };
 
   useEffect(() => {
-    fetchData(); // Fetch data immediately
-    const intervalId = setInterval(fetchData, 120000); // Fetch data every 2 minutes
+    fetchData();
+    const intervalId = setInterval(fetchData, 60000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -52,16 +45,17 @@ export default function NishiWaseda() {
       </div>
 
       <div className={styles.grid}>
-        {cafeterias.map((cafeteria, index) => (
-          <div key={index} className={styles.cafeteriaCard}>
-            <h2 className={styles.cafeteriaName}>{cafeteria.name}</h2>
-            <p>
-              Current Waiting Time:{" "}
-              <span className={styles.fontBold}>{cafeteria.queue}</span> minutes
-            </p>
-          </div>
-        ))}
+        <div className={styles.cafeteriaCard}>
+          <h2 className={styles.cafeteriaName}>Button Press Count</h2>
+          <p>
+            Total Clicks:{" "}
+            <span className={styles.fontBold}>
+              {buttonPressCount !== null ? buttonPressCount : "Loading..."}
+            </span>
+          </p>
+        </div>
       </div>
+
       <div className={styles.mapIm}>
         <Image
           src="/nishiwasedaMap.png"

@@ -55,7 +55,7 @@ export default function NishiWaseda() {
       </div>
       <div className={styles.mapIm}>
         <Image
-          src="/nishiwasedaMap.png"
+          src="/nishiwasedaMap.jpg"
           width={600}
           height={600}
           alt="nishiMap"

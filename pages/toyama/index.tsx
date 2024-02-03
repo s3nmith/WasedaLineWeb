@@ -40,7 +40,7 @@ export default function NishiWaseda() {
       </div>
 
       <div className={styles.mapIm}>
-        <Image src="/ToyamaMap.png" width={500} height={500} alt="nishiMap" />
+        <Image src="/ToyamaMap.jpg" width={500} height={500} alt="nishiMap" />
       </div>
     </div>
   );

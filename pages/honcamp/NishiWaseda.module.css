@@ -2,20 +2,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   max-width: 100%;
   padding: 1rem 2rem;
   margin: 0 auto;
 }
-
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.card {
+  flex: 3;
+  text-align: center;
+  padding: 2rem;
+  margin: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  font-size: 1.25rem;
+  min-width: 400px;
+}
 .title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  justify-content: center;
   text-align: center;
 }
-
 .mapIm {
   display: flex;
   justify-content: center;
@@ -29,39 +44,25 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #000000;
   border-radius: 5px;
-  display: inline-block;
-  margin-bottom: 20px;
   padding: 5px 10px;
 }
-
 .backButt:hover {
   border-color: #fef9ed;
   color: #fef9ed;
   background-color: #881c28;
 }
-
-.grid {
-  width: fit-content;
-  margin: 0 auto;
-  display: grid;
-  gap: 1rem;
-  justify-content: center;
+.progressBarBackground {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
 }
-
-.cafeteriaCard {
-  width: 100%; /* Adjust to your preference, to limit the card width */
-  text-align: center;
-  padding: 1rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.cafeteriaName {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
+.progressBarFill {
+  height: 20px;
+  border-radius: 5px;
+  background-color: #4caf50;
+  width: 0%;
+  transition: background-color 2s ease-in-out;
 }

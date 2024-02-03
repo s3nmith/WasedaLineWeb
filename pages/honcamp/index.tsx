@@ -1,23 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import styles from "./NishiWaseda.module.css";
 import Image from "next/image";
 
-// replace this with actual data from an API
-const mockData = [{ name: "Okuma Garden Cafeteria", queue: 20 }];
-
-type Cafeteria = {
-  name: string;
-  queue: number;
-};
-
 export default function NishiWaseda() {
-  const [cafeterias, setCafeterias] = useState<Cafeteria[]>([]);
+  // Fixed queue times without any logic to decrease them over time
+  const queueTime57 = 16;
 
-  useEffect(() => {
-    // Fetch data from an API or use mock data
-    setCafeterias(mockData);
-  }, []);
+  const maxQueueTime = 20;
+  const progressBarWidth57 = (queueTime57 / maxQueueTime) * 100;
+  const progressBarColor57 =
+    queueTime57 <= 5 ? "#4CAF50" : queueTime57 <= 14 ? "#FFC107" : "#ff0718";
 
   return (
     <div className={styles.container}>
@@ -27,20 +20,28 @@ export default function NishiWaseda() {
           <h2>Home</h2>
         </Link>
       </div>
-
-      <div className={styles.grid}>
-        {cafeterias.map((cafeteria, index) => (
-          <div key={index} className={styles.cafeteriaCard}>
-            <h2 className={styles.cafeteriaName}>{cafeteria.name}</h2>
-            <p>
-              Current Waiting Time:{" "}
-              <span className={styles.fontBold}>{cafeteria.queue}</span> minutes
-            </p>
+      <div className={styles.cardsContainer}>
+        <div className={styles.card}>
+          <h2>Okuma Garden Cafeteria</h2>
+          <strong>{queueTime57} minutes</strong>
+          <div className={styles.progressBarBackground}>
+            <div
+              className={styles.progressBarFill}
+              style={{
+                width: `${progressBarWidth57}%`,
+                backgroundColor: progressBarColor57,
+              }}
+            ></div>
           </div>
-        ))}
+        </div>
       </div>
       <div className={styles.mapIm}>
-        <Image src="/wasedaMap.png" width={500} height={500} alt="nishiMap" />
+        <Image
+          src="/nishiwasedaMap.png"
+          width={600}
+          height={600}
+          alt="nishiMap"
+        />
       </div>
     </div>
   );

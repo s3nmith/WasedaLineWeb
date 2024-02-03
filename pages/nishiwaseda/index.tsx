@@ -1,61 +1,58 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import styles from "./NishiWaseda.module.css";
 import Image from "next/image";
 
-// const mockData = [{ name: "Building 56", queue: 5 }];
-
-type Cafeteria = {
-  name: string;
-  queue: number;
-};
-
 export default function NishiWaseda() {
-  const [buttonPressCount, setButtonPressCount] = useState<number | null>(null);
+  // Fixed queue times without any logic to decrease them over time
+  const queueTime57 = 10;
+  const queueTime63 = 4;
 
-  const fetchData = () => {
-    fetch("/api/test")
-      .then((response) => response.json())
-      .then((data) => {
-        if (data && data.receivedData) {
-          setButtonPressCount(parseInt(data.receivedData));
-        } else {
-          console.error("Error: receivedData is null");
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-      });
-  };
+  const maxQueueTime = 20;
+  const progressBarWidth57 = (queueTime57 / maxQueueTime) * 100;
+  const progressBarColor57 =
+    queueTime57 <= 5 ? "#4CAF50" : queueTime57 <= 14 ? "#FFC107" : "#ff0718";
 
-  useEffect(() => {
-    fetchData();
-    const intervalId = setInterval(fetchData, 20000);
-
-    return () => clearInterval(intervalId);
-  }, []);
+  const progressBarWidth63 = (queueTime63 / maxQueueTime) * 100;
+  const progressBarColor63 =
+    queueTime63 <= 5 ? "#4CAF50" : queueTime63 <= 14 ? "#FFC107" : "#ff0718";
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Nishiwaseda/西早稲田キャンパス</h1>
       <div className={styles.backButt}>
         <Link href="/">
-          <h2 className={styles.backText}>Home</h2>
+          <h2>Home</h2>
         </Link>
       </div>
-
-      <div className={styles.grid}>
-        <div className={styles.cafeteriaCard}>
-          <h2 className={styles.cafeteriaName}>Button Press Count</h2>
-          <p>
-            Total Clicks:{" "}
-            <span className={styles.fontBold}>
-              {buttonPressCount !== null ? buttonPressCount : "Loading..."}
-            </span>
-          </p>
+      <div className={styles.cardsContainer}>
+        <div className={styles.card}>
+          <h2>Building 57</h2>
+          <strong>{queueTime57} minutes</strong>
+          <div className={styles.progressBarBackground}>
+            <div
+              className={styles.progressBarFill}
+              style={{
+                width: `${progressBarWidth57}%`,
+                backgroundColor: progressBarColor57,
+              }}
+            ></div>
+          </div>
+        </div>
+        <div className={styles.card}>
+          <h2>Building 63</h2>
+          <strong>{queueTime63} minutes</strong>
+          <div className={styles.progressBarBackground}>
+            <div
+              className={styles.progressBarFill}
+              style={{
+                width: `${progressBarWidth63}%`,
+                backgroundColor: progressBarColor63,
+              }}
+            ></div>
+          </div>
         </div>
       </div>
-
       <div className={styles.mapIm}>
         <Image
           src="/nishiwasedaMap.png"

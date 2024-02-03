@@ -60,6 +60,9 @@ body::before {
   padding: 10px;
   border-radius: 4px;
   transition: border-color 0.3s ease-in-out;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .image {

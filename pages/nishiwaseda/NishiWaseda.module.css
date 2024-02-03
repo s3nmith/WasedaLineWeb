@@ -6,15 +6,18 @@
   padding: 1rem 2rem;
   margin: 0 auto;
 }
+
 .cardsContainer {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 20px;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
 }
+
 .card {
-  flex: 3;
+  flex: 1; /* Allows cards to grow and fill the space evenly */
   text-align: center;
   padding: 2rem;
   margin: 1rem;
@@ -23,14 +26,30 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   font-size: 1.25rem;
-  min-width: 400px;
+  min-width: 250px; /* Adjust min-width for better mobile responsiveness */
+  max-width: 400px; /* Ensures cards do not grow too large on wider screens */
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cardsContainer {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center; /* Center cards when stacked */
+  }
+
+  .card {
+    width: 80%; /* Adjust card width on smaller screens for better fit */
+    min-width: 0; /* Override min-width on smaller screens */
+  }
+}
+
 .title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
   text-align: center;
 }
+
 .mapIm {
   display: flex;
   justify-content: center;
@@ -40,6 +59,7 @@
   max-width: 600px;
   margin: 0 auto;
 }
+
 .backButt {
   justify-content: center;
   align-items: center;
@@ -48,21 +68,22 @@
   border-radius: 5px;
   padding: 5px 10px;
 }
+
 .backButt:hover {
   border-color: #fef9ed;
   color: #fef9ed;
   background-color: #881c28;
 }
+
 .progressBarBackground {
   width: 100%;
   background-color: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
 }
+
 .progressBarFill {
   height: 20px;
   border-radius: 5px;
-  background-color: #4caf50;
-  width: 0%;
   transition: background-color 2s ease-in-out;
 }

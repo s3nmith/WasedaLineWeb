@@ -1,21 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./NishiWaseda.module.css";
 import Image from "next/image";
 
 export default function NishiWaseda() {
-  // Fixed queue times without any logic to decrease them over time
-  const queueTime57 = 10;
-  const queueTime63 = 4;
+  const [queueTime57, setQueueTime57] = useState(0);
+
+  // Function to fetch queue time from API
+  const fetchQueueTime57 = async () => {
+    try {
+      const response = await fetch("/api/route"); // Assuming your API route is at '/api/route'
+      const data = await response.json();
+      setQueueTime57(data.receivedData);
+    } catch (error) {
+      console.error("Error fetching queue time:", error);
+    }
+  };
+
+  // Fetch queue time on component mount
+  useEffect(() => {
+    const interval = setInterval(fetchQueueTime57, 7000); // Fetch every 7 seconds
+    fetchQueueTime57(); // Fetch initial value
+    return () => clearInterval(interval);
+  }, []);
 
   const maxQueueTime = 20;
   const progressBarWidth57 = (queueTime57 / maxQueueTime) * 100;
   const progressBarColor57 =
     queueTime57 <= 5 ? "#4CAF50" : queueTime57 <= 14 ? "#FFC107" : "#ff0718";
-
-  const progressBarWidth63 = (queueTime63 / maxQueueTime) * 100;
-  const progressBarColor63 =
-    queueTime63 <= 5 ? "#4CAF50" : queueTime63 <= 14 ? "#FFC107" : "#ff0718";
 
   return (
     <div className={styles.container}>
@@ -41,13 +53,15 @@ export default function NishiWaseda() {
         </div>
         <div className={styles.card}>
           <h2>Building 63</h2>
-          <strong>{queueTime63} minutes</strong>
+          <strong>4 minutes</strong>{" "}
+          {/* Hardcoded queue time for Building 63 */}
           <div className={styles.progressBarBackground}>
             <div
               className={styles.progressBarFill}
               style={{
-                width: `${progressBarWidth63}%`,
-                backgroundColor: progressBarColor63,
+                width: `${(4 / maxQueueTime) * 100}%`,
+                backgroundColor:
+                  4 <= 5 ? "#4CAF50" : 4 <= 14 ? "#FFC107" : "#ff0718",
               }}
             ></div>
           </div>

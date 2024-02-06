@@ -9,7 +9,7 @@ export default function NishiWaseda() {
   // Function to fetch queue time from API
   const fetchQueueTime57 = async () => {
     try {
-      const response = await fetch("/api/route"); // Assuming your API route is at '/api/route'
+      const response = await fetch("/api/test"); // Assuming your API route is at '/api/route'
       const data = await response.json();
       setQueueTime57(data.receivedData);
     } catch (error) {

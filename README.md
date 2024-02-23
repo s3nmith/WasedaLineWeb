@@ -1,38 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WasedaLine Queue Tracker 🚀
 
-## Getting Started
+Welcome to WasedaLine, a cutting-edge project developed by Waseda University students dedicated to optimizing campus life through technology. Our mission is to minimize the time students spend in queues at the cafeteria, allowing for a more efficient and predictable campus experience.
 
-First, run the development server:
+## 🎯 Introduction
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+**Objective:** Enhance students' time management on campus by providing real-time data on cafeteria queue lengths.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Need:** Address the challenge of unexpectedly long queues during peak times, improving overall efficiency and predictability for students.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+**System Overview:** WasedaLine is a real-time queue tracking system employing IoT technology to monitor and relay cafeteria queue lengths directly to students.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 🛠 Project Components
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. **IoT Device:**
+   - **Function:** Records a "click" with each tray pickup, indicating queue activity.
+   - **Specifications:** Durable, water-resistant, ESP8266 NodeMCU for reliability and longevity.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **Backend System:**
+   - **Function:** Processes clicks to accurately estimate queue lengths.
+   - **Data Processing:** Utilizes calculations based on the number of clicks within specific time intervals (3/5 minutes) to estimate queue length.
+   - **API:** A REST API facilitates real-time data transmission to the front-end application.
 
-## Learn More
+3. **Front-end Application:**
+   - **Function:** Displays real-time queue length to students through a user-friendly interface.
+   - **Features:** 
+     - Real-time data display.
+     - Historical data analysis to predict peak times.
+     - Notifications alerting to low queue times.
 
-To learn more about Next.js, take a look at the following resources:
+### 📈 Benefits
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Time Management:** Empowers students with the choice to visit the cafeteria at less crowded times.
+- **Efficiency:** Reduces unnecessary waiting, freeing up time for study or leisure.
+- **Predictability:** Historical data analysis aids in planning around peak times, particularly beneficial during exams or high-stress periods.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 🔗 GitHub Repositories
 
-## Deploy on Vercel
+- Main Project: [WasedaLine](https://github.com/s3nmith/WasedaLine)
+- Web Interface: [WasedaLineWeb](https://github.com/s3nmith/WasedaLineWeb)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 🤝 Contributing
+
+We welcome contributions from fellow Waseda students. Whether it's feature suggestions, bug reports, or code contributions, your input is invaluable.
+
+---
+
+WasedaLine aims to enhance the campus experience by providing real-time data on campus-wide queues, allowing students to make informed decisions and manage their time effectively.
+

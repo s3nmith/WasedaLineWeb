@@ -1,6 +1,6 @@
 # WasedaLine Queue Tracker 🚀
 
-Welcome to WasedaLine, a cutting-edge project developed by Waseda University students dedicated to optimizing campus life through technology. Our mission is to minimize the time students spend in queues at the cafeteria, allowing for a more efficient and predictable campus experience.
+Welcome to WasedaLine, a cutting-edge project developed by Waseda University students affiliated with GDSC Waseda dedicated to optimizing campus life through technology. Our mission is to minimize the time students spend in queues at the cafeteria, allowing for a more efficient and predictable campus experience.
 
 ## 🎯 Introduction
 

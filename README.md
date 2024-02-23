@@ -13,12 +13,11 @@ Welcome to WasedaLine, a cutting-edge project developed by Waseda University stu
 ### 🛠 Project Components
 
 1. **IoT Device:**
-   - **Function:** Records a "click" with each tray pickup, indicating queue activity.
-   - **Specifications:** Durable, water-resistant, ESP8266 NodeMCU for reliability and longevity.
+   - **Function:** Records a number of people in areas of the food 
 
 2. **Backend System:**
-   - **Function:** Processes clicks to accurately estimate queue lengths.
-   - **Data Processing:** Utilizes calculations based on the number of clicks within specific time intervals (3/5 minutes) to estimate queue length.
+   - **Function:** ML model running on the RasberryPi returns number of people in areas of the cafeteria
+   - **Data Processing:** Uses this number of people and historical check-out data to give a queue time
    - **API:** A REST API facilitates real-time data transmission to the front-end application.
 
 3. **Front-end Application:**

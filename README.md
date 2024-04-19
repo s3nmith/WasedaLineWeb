@@ -12,16 +12,16 @@ Welcome to WasedaLine, a cutting-edge project developed by Waseda University stu
 
 ### 🛠 Project Components
 
-1. **IoT Device:**
-   - **Function:** Records a number of people in areas of the food 
+1. **IoT Device: Rasberry Pi 4**
+   - **Function:** Records a number of people in areas of the cafeteria
 
 2. **Backend System:**
-   - **Function:** ML model running on the RasberryPi returns number of people in areas of the cafeteria
-   - **Data Processing:** Uses this number of people and historical check-out data to give a queue time
-   - **API:** A REST API facilitates real-time data transmission to the front-end application.
+   - **Function:** Yolo-v4-tiny Object Identification model running on the RasberryPi returns number of people in areas of the cafeteria
+   - **Data Processing:** Uses this number of people, check-out data and other data to give a queue time
+   - **API:** Next.js API Routes facilitates real-time data transmission to the front-end application.
 
 3. **Front-end Application:**
-   - **Function:** Displays real-time queue length to students through a user-friendly interface.
+   - **Function:** Displays real-time queue length to students through a easy and user-friendly interface.
    - **Features:** 
      - Real-time data display.
      - Historical data analysis to predict peak times.
@@ -35,7 +35,7 @@ Welcome to WasedaLine, a cutting-edge project developed by Waseda University stu
 
 ### 🔗 GitHub Repositories
 
-- Main Project: [WasedaLine](https://github.com/s3nmith/WasedaLine)
+- Backend Files: [WasedaLine](https://github.com/s3nmith/WasedaLine)
 - Web Interface: [WasedaLineWeb](https://github.com/s3nmith/WasedaLineWeb)
 
 

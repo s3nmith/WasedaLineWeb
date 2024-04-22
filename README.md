@@ -1,6 +1,6 @@
 # WasedaLine Queue Tracker 🚀
 
-Welcome to WasedaLine, a cutting-edge project developed by Lahiru(me), affiliated with GDSC Waseda dedicated to optimizing campus life through technology. Our mission is to minimize the time students spend in queues at the cafeteria, allowing for a more efficient and predictable campus experience. This idea can be extended to track campus-wide traffic as well as room capacity.
+Welcome to WasedaLine, a cutting-edge project developed by ..., affiliated with GDSC Waseda dedicated to optimizing campus life through technology. Our mission is to minimize the time students spend in queues at the cafeteria, allowing for a more efficient and predictable campus experience. This idea can be extended to track campus-wide traffic as well as room capacity.
 
 ## 🎯 Introduction
 
